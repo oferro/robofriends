@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+// import App from './App';
+import Hellow from './Hellow';
 import reportWebVitals from './reportWebVitals';
+import 'tachyons';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+  	{/* <h1>Hello World</h1> */}
+    {/* <App /> */}
+    <Hellow greeting={'Hellow react ninja'}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
