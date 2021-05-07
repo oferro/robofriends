@@ -1,16 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-// import App from './App';
-import Hellow from './Hellow';
+import CardList from './CardList';
 import reportWebVitals from './reportWebVitals';
 import 'tachyons';
+import { robots } from './robots';
 
 ReactDOM.render(
   <React.StrictMode>
-  	{/* <h1>Hello World</h1> */}
-    {/* <App /> */}
-    <Hellow greeting={'Hellow react ninja'}/>
+    <CardList robots={robots} />
   </React.StrictMode>,
   document.getElementById('root')
 );
