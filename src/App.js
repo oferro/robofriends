@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import CardList from './CardList';
 import SerchBox from './SerchBox';
 import { robots } from './robots';
+import './App.css';
 
 
 class App extends Component  {
@@ -23,7 +24,7 @@ class App extends Component  {
             })
         return (
             <div className='tc'>
-                <h1>RoboFriends</h1>
+                <h1 className='f1'>RoboFriends</h1>
                 <SerchBox serchChange={this.onSerchChange} />
                 <CardList robots={filteredRobots} />
             </div>
