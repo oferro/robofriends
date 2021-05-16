@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import CardList from './CardList';
-import SerchBox from './SerchBox';
-import Scroll from './Scroll';
+import CardList from '../components/CardList';
+import SerchBox from '../components/SerchBox';
+import Scroll from '../components/Scroll';
 import './App.css';
 
 
@@ -25,14 +25,15 @@ class App extends Component  {
     }
 
     render() {
-    
-        const filteredRobots = this.state.robots.filter(robots => {
-                return robots.name.toLowerCase().includes(this.state.serchfield.toLowerCase());
+        const {robots, serchfield} = this.state;
+        const filteredRobots = robots.filter(robot => {
+                return robot.name.toLowerCase().includes(serchfield.toLowerCase());
             });
-        if(this.state.robots.length === 0){
-            return <h1>Loading ...</h1>
-        } else {   
-            return (
+            
+        return !robots.length ?
+            <h1>Loading ...</h1>
+            :
+            (
                 <div className='tc'>
                     <h1 className='f1'>RoboFriends</h1>
                     <SerchBox serchChange={this.onSerchChange} />
@@ -41,7 +42,6 @@ class App extends Component  {
                     </Scroll>
                 </div>
             );
-        }        
     }
 }
 
